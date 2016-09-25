@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: whitesmoke;
+  font-family: 'Abel', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(130, 131, 147);
+}
+section {
+  border: 1.5px solid rgb(130, 131, 147);
+  background-color: white;
+  display: block;
+  margin: 1em;
+}
+p {
+  margin-top: 2.5em;
+  text-align: center;
+  margin-left: 0.7em;
+  margin-right: 0.7em;
+  color: rgb(107, 107, 121);
+}
+section h2{
+  border-bottom: 1.5px solid rgb(130, 131, 147);
+  border-left: 1.5px solid rgb(130, 131, 147);
+  text-align: center;
+  float: right;
+  width: 6em;
+  margin: 0;
+  color: rgb(130, 131, 147);
+}
+.section-1 h2 {
+ background-color: rgb(252, 243, 192);
+}
+
+.section-2 h2 {
+  background-color: rgb(240, 156, 186);
+}
+
+.section-3 h2 {
+  background-color: rgb(183, 227, 176);
+}
