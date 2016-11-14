@@ -3,6 +3,7 @@ body {
   color: black;
   background-color: #fff;
   font-family: 'Oxygen', sans-serif;
+  padding-top: 60px;
 }
 
 /** HEADER **/
@@ -28,10 +29,10 @@ body {
 }
 
 
-h1 {
-  text-align: center;
+.text-center {
   margin-bottom: 25px;
   margin-top: 0px;
+  font-size: 34px;
 }
 .section-box {
   background-color: grey;
