@@ -93,7 +93,6 @@ $ajaxUtils.sendGetRequest(
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
 
-  console.log('here', categories);
 
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
@@ -112,10 +111,9 @@ function buildAndShowHomeHTML (categories) {
       // var category = categories[randomCategoryIndex];
 
       var category = chooseRandomCategory(categories);
-      console.log ('random cat!!!!!!', category);
+
 
       var chosenCategoryShortName = category.short_name;
-      console.log ('aaaaaaaaaa', chosenCategoryShortName);
 
 
 
@@ -134,7 +132,6 @@ function buildAndShowHomeHTML (categories) {
       //var homeHtmlToInsertIntoMainPage = homeHtml.replace('{{randomCategoryShortName}}', '\'' + chosenCategoryShortName + "'");
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, 'randomCategoryShortName', '\'' + chosenCategoryShortName + '\'');
 
-      console.log(homeHtmlToInsertIntoMainPage);
 
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
@@ -361,8 +358,3 @@ function insertItemPortionName(html,
 global.$dc = dc;
 
 })(window);
-
-setInterval(function(){
-  console.log('hi from timer');
-}, 100)
-console.log('here42');
