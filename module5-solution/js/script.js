@@ -93,6 +93,8 @@ $ajaxUtils.sendGetRequest(
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
 
+  console.log('here', categories);
+
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
@@ -101,11 +103,19 @@ function buildAndShowHomeHTML (categories) {
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
-var chosenCategoryShortName =
-   chooseRandomCategory (categories,
-                        randomArrayIndex);
-insert
 
+      // console.log('here2', categories, categories.length, homeHtml);
+      // var numberOfCategories = categories.length;
+      // console.log (numberOfCategories);
+      // var randomCategoryIndex = Math.floor(Math.random()*numberOfCategories);
+      // console.log(randomCategoryIndex);
+      // var category = categories[randomCategoryIndex];
+
+      var category = chooseRandomCategory(categories);
+      console.log ('random cat!!!!!!', category);
+
+      var chosenCategoryShortName = category.short_name;
+      console.log ('aaaaaaaaaa', chosenCategoryShortName);
 
 
 
@@ -121,12 +131,17 @@ insert
       // it into the home html snippet.
       //
       // var homeHtmlToInsertIntoMainPage = ....
+      //var homeHtmlToInsertIntoMainPage = homeHtml.replace('{{randomCategoryShortName}}', '\'' + chosenCategoryShortName + "'");
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, 'randomCategoryShortName', '\'' + chosenCategoryShortName + '\'');
+
+      console.log(homeHtmlToInsertIntoMainPage);
 
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       // ....
+      insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
@@ -346,3 +361,8 @@ function insertItemPortionName(html,
 global.$dc = dc;
 
 })(window);
+
+setInterval(function(){
+  console.log('hi from timer');
+}, 100)
+console.log('here42');
